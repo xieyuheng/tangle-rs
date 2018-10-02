@@ -23,7 +23,7 @@ A collection of tools for restricted org-mode.
 We use Collective Code Construction Contract (a.k.a. C4) as our collaboration protocol.
 
 - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
-- [Our Style Guide](https://github.com/parsing-tech/parsing-rs/blob/master/STYLE-GUIDE.md)
+- [Our Style Guide](STYLE-GUIDE.md)
 
 To highlight some feature of C4 :
 
