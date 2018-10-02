@@ -31,13 +31,13 @@ ARGS:
 
 In file `engine.org`
 
-- add tangle property-line
+- Add tangle property-line
 
 ```
 #+property: tangle lib.rs
 ```
 
-- the following code block will be tangled into `lib.rs`
+- The following code block will be tangled into `lib.rs`
 
 ```
 #+begin_src rust
