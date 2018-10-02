@@ -6,6 +6,12 @@
 
 A collection of tools for restricted org-mode.
 
+- org-parser -- parsing org file
+- org-tangle -- fast tangle
+- org-book -- generate book
+
+## Restricted
+
 - odd numeber of stars for headline.
 - strict indentation with two spaces.
 - can not use star for list -- since star is used for headline.
