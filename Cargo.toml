@@ -2,6 +2,7 @@
 
 members = [
     "org-parser",
+    "org-tangle-engine",
     "org-tangle",
     "org-book",
 ]
