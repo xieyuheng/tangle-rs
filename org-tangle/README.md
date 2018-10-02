@@ -1,8 +1,8 @@
 # org-tangle
 
-[![Build Status](https://travis-ci.org/xieyuheng/org-rs.svg?branch=master)](https://travis-ci.org/xieyuheng/org-rs)
+[![Build Status](https://travis-ci.org/parsing-tech/org-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/org-rs)
 
-- [Main Repo](https://github.com/xieyuheng/org-rs)
+- [Main Repo](https://github.com/parsing-tech/org-rs)
 
 A faster way to tangle org-mode.
 
@@ -62,7 +62,7 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 ```
 
 - For a complete example,
-  see [this directory](https://github.com/xieyuheng/org-rs/tree/master/org-tangle-engine/src)
+  see [this directory](https://github.com/parsing-tech/org-rs/tree/master/org-tangle-engine/src)
   where `engine.org` is tangled to `lib.rs`
 
 ## Note About Restriction
@@ -75,4 +75,4 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 
 ## Related Project
 
-- [md-tangle](https://github.com/xieyuheng/md-tangle) -- same tool for markdown file.
+- [md-tangle](https://github.com/parsing-tech/md-rs) -- same tool for markdown file.

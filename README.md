@@ -1,6 +1,6 @@
 # org-mode -- restricted
 
-[![Build Status](https://travis-ci.org/xieyuheng/org-rs.svg?branch=master)](https://travis-ci.org/xieyuheng/org-rs)
+[![Build Status](https://travis-ci.org/parsing-tech/org-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/org-rs)
 
 ## Welcome
 
