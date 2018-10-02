@@ -39,7 +39,7 @@ In file `engine.org`
 
 - the following code block will be tangled into `lib.rs`
 
-```org-mode
+```
 #+begin_src rust
 fn tangle (string: &str) -> Result <String, TangleError> {
     let mut result = String::new ();
