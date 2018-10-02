@@ -61,8 +61,10 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 
 ## Note About Restriction
 
-- This is restricted org-mode,
-  only global tangle property-line and code block level tangle property-line will be supported [TODO].
+- This is restricted org-mode
+  - only global tangle property-line
+    and code block level tangle property-line
+    will be supported. [TODO]
   - headline level tangle property-line will NOT be supported.
 
 ## Related Project
