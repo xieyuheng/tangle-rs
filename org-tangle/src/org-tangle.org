@@ -1,7 +1,0 @@
-#+property: tangle main.rs
-#+title: org-tangle
-
-* use
-
-  #+begin_src rust
-  #+end_src
