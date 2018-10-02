@@ -38,6 +38,7 @@ In file `engine.org`
 ```
 
 - The following code block will be tangled into `lib.rs`
+  - where code blocks are marked by `#+begin_src <lang>` and `#+end_src`
 
 ```
 #+begin_src rust
