@@ -245,13 +245,13 @@
 *** absolute_lize
 
     #+begin_src rust
-    pub fn absolute_lize (path: PathBuf) -> PathBuf {
+    pub fn absolute_lize (path: &Path) -> PathBuf {
         if path.is_relative () {
             let mut absolute_path = env::current_dir () .unwrap ();
-            absolute_path.push (path.as_path ());
+            absolute_path.push (path);
             absolute_path
         } else {
-            path
+            path.to_path_buf ()
         }
     }
     #+end_src
