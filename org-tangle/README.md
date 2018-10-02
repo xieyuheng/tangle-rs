@@ -59,6 +59,12 @@ fn tangle (string: &str) -> Result <String, TangleError> {
   see [this directory](https://github.com/xieyuheng/org-rs/tree/master/org-tangle-engine/src)
   where `engine.org` is tangled to `lib.rs`
 
+## Note About Restriction
+
+- This is restricted org-mode,
+  only global tangle property-line and code block level tangle property-line will be supported [TODO].
+  - headline level tangle property-line will NOT be supported.
+
 ## Related Project
 
 - [md-tangle](https://github.com/xieyuheng/md-tangle) -- same tool for markdown file.
