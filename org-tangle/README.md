@@ -8,6 +8,12 @@ A faster way to tangle org-mode.
 
 A command line tool to tangle code blocks in org file to source code file.
 
+## Getting Start
+
+With nightly rust toolchain do:
+
+`cargo install org-tangle`
+
 ## usage
 
 ```
