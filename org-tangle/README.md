@@ -7,6 +7,12 @@
 A command line tool to tangle code blocks in org file to source code file.
 - A faster way to tangle org-mode.
 
+## Note About Restriction
+
+- The use case is restricted to global tangle property-line
+  - code block level tangle property-line is NOT supported
+  - headline level tangle property-line is NOT supported
+
 ## Getting Start
 
 To build the program, nightly rust toolchain is needed.
@@ -71,14 +77,6 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 - For a complete example,
   see [this directory](https://github.com/parsing-tech/org-rs/tree/master/org-tangle-engine/src)
   where `engine.org` is tangled to `lib.rs`
-
-## Note About Restriction
-
-- This is restricted org-mode
-  - only global tangle property-line
-    and code block level tangle property-line
-    will be supported. [TODO]
-  - headline level tangle property-line will NOT be supported.
 
 ## Related Project
 
