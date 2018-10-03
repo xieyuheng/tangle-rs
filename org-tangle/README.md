@@ -19,8 +19,7 @@ Then do:
 
 ```
 rustup install nightly
-rustup default nightly
-cargo install org-tangle
+cargo +nightly install org-tangle
 ```
 
 ## usage
