@@ -4,9 +4,8 @@
 
 - [Main Repo](https://github.com/parsing-tech/org-rs)
 
-A faster way to tangle org-mode.
-
 A command line tool to tangle code blocks in org file to source code file.
+- A faster way to tangle org-mode.
 
 ## Getting Start
 
