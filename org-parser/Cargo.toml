@@ -3,7 +3,10 @@ name = "org-parser"
 version = "0.1.1"
 authors = ["Xie Yuheng <xyheme@gmail.com>"]
 edition = "2018"
-description = "Simplified org-mode parser."
+repository = "https://github.com/parsing-tech/org-rs"
+description = """
+Simplified org-mode parser.
+"""
 license = "GPL-3.0"
 
 [dependencies]

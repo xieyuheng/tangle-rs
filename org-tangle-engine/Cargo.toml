@@ -11,4 +11,3 @@ A faster way to tangle org-mode.
 license = "GPL-3.0"
 
 [dependencies]
-org-parser = { version = "0.1", path = "../org-parser" }
