@@ -84,4 +84,4 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 
 ## Related Project
 
-- [md-tangle](https://github.com/parsing-tech/md-rs) -- same tool for markdown file.
+- [md-tangle](https://github.com/parsing-tech/md-rs/tree/master/md-tangle) -- same tool for markdown file.
