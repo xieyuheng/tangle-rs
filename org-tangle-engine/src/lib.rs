@@ -184,3 +184,11 @@
             path.to_path_buf ()
         }
     }
+    pub fn tangle_all_before_build () -> io::Result <()> {
+        let path = Path::new (".");
+        let current_dir = env::current_dir () .unwrap ();
+        println! ("- tangle_all_before_build");
+        println! ("  current_dir : {:?}", current_dir);
+        let path = absolute_lize (&path);
+        dir_tangle_rec (&path)
+    }
