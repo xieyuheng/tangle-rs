@@ -13,7 +13,7 @@ A command line tool to tangle code blocks in org file to source code file.
 To build the program, nightly rust toolchain is needed.
 
 `rustup` is the tool to help programmers install rust toolchains.
-- One can get rustup from :: https://rustup.rs/
+- One can get rustup from :: https://rustup.rs
 
 Then do:
 
