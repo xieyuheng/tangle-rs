@@ -18,27 +18,17 @@
           }
       }
   }
-  const BLOCK_BEGIN: &'static str = "#+begin_src ";
-  const BLOCK_END: &'static str = "#+end_src";
-
-  fn block_begin_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with (BLOCK_BEGIN)
-  }
-
-  fn block_end_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with (BLOCK_END)
-  }
-
   const DESTINATION_PREFIX: &'static str = "#+property: tangle ";
 
   fn destination_line_p (line: &str) -> bool {
       line .trim_start () .starts_with (DESTINATION_PREFIX)
   }
+
   fn find_destination (string: &str) -> Option <String> {
       for line in string.lines () {
           if destination_line_p (line) {
               let destination = &line [DESTINATION_PREFIX.len () ..];
-              let destination = destination.trim_end ();
+              let destination = destination.trim ();
               return Some (destination.to_string ());
           }
       }
@@ -51,6 +41,16 @@
       let destination = find_destination (example) .unwrap ();
       assert_eq! (destination, "core.rs");
   }
+    const BLOCK_BEGIN: &'static str = "#+begin_src ";
+    const BLOCK_END: &'static str = "#+end_src";
+
+    fn block_begin_line_p (line: &str) -> bool {
+        line .trim_start () .starts_with (BLOCK_BEGIN)
+    }
+
+    fn block_end_line_p (line: &str) -> bool {
+        line .trim_start () .starts_with (BLOCK_END)
+    }
     fn tangle_collect (
         result: &mut String,
         lines: &mut Lines,
@@ -187,7 +187,8 @@
     pub fn tangle_all_before_build () -> io::Result <()> {
         let path = Path::new (".");
         let current_dir = env::current_dir () .unwrap ();
-        println! ("- tangle_all_before_build");
+        println! ("- org_tangle_engine");
+        println! ("  tangle_all_before_build");
         println! ("  current_dir : {:?}", current_dir);
         let path = absolute_lize (&path);
         dir_tangle_rec (&path)

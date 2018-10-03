@@ -31,35 +31,20 @@
   }
   #+end_src
 
-* line predicates
+* find_destination
 
   #+begin_src rust
-  const BLOCK_BEGIN: &'static str = "#+begin_src ";
-  const BLOCK_END: &'static str = "#+end_src";
-
-  fn block_begin_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with (BLOCK_BEGIN)
-  }
-
-  fn block_end_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with (BLOCK_END)
-  }
-
   const DESTINATION_PREFIX: &'static str = "#+property: tangle ";
 
   fn destination_line_p (line: &str) -> bool {
       line .trim_start () .starts_with (DESTINATION_PREFIX)
   }
-  #+end_src
 
-* find_destination
-
-  #+begin_src rust
   fn find_destination (string: &str) -> Option <String> {
       for line in string.lines () {
           if destination_line_p (line) {
               let destination = &line [DESTINATION_PREFIX.len () ..];
-              let destination = destination.trim_end ();
+              let destination = destination.trim ();
               return Some (destination.to_string ());
           }
       }
@@ -75,6 +60,21 @@
   #+end_src
 
 * tangle
+
+*** line predicates
+
+    #+begin_src rust
+    const BLOCK_BEGIN: &'static str = "#+begin_src ";
+    const BLOCK_END: &'static str = "#+end_src";
+
+    fn block_begin_line_p (line: &str) -> bool {
+        line .trim_start () .starts_with (BLOCK_BEGIN)
+    }
+
+    fn block_end_line_p (line: &str) -> bool {
+        line .trim_start () .starts_with (BLOCK_END)
+    }
+    #+end_src
 
 *** tangle_collect
 
@@ -262,7 +262,8 @@
     pub fn tangle_all_before_build () -> io::Result <()> {
         let path = Path::new (".");
         let current_dir = env::current_dir () .unwrap ();
-        println! ("- tangle_all_before_build");
+        println! ("- org_tangle_engine");
+        println! ("  tangle_all_before_build");
         println! ("  current_dir : {:?}", current_dir);
         let path = absolute_lize (&path);
         dir_tangle_rec (&path)
