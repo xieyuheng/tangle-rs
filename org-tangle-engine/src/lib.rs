@@ -18,18 +18,32 @@
           }
       }
   }
-  const DESTINATION_PREFIX: &'static str = "#+property: tangle ";
+  fn property_line_p (line: &str) -> bool {
+      line .trim_start () .starts_with ("#+property:")
+  }
 
-  fn destination_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with (DESTINATION_PREFIX)
+  fn find_destination_in_property_line (
+      line: &str,
+  ) -> Option <String> {
+      let mut words = line.split_whitespace ();
+      while let Some (word) = words.next () {
+          if word == "tangle" || word == ":tangle" {
+              if let Some (destination) = words.next () {
+                  return Some (destination.to_string ())
+              }
+          }
+      }
+      None
   }
 
   fn find_destination (string: &str) -> Option <String> {
       for line in string.lines () {
-          if destination_line_p (line) {
-              let destination = &line [DESTINATION_PREFIX.len () ..];
-              let destination = destination.trim ();
-              return Some (destination.to_string ());
+          if property_line_p (line) {
+              let destination =
+                  find_destination_in_property_line (line);
+              if destination. is_some () {
+                  return destination;
+              }
           }
       }
       None
@@ -37,9 +51,13 @@
 
   #[test]
   fn test_find_destination () {
-      let example = "#+property: tangle core.rs";
+      let example = "#+property: tangle lib.rs";
       let destination = find_destination (example) .unwrap ();
-      assert_eq! (destination, "core.rs");
+      assert_eq! (destination, "lib.rs");
+
+      let example = "#+property: header-args :tangle lib.rs";
+      let destination = find_destination (example) .unwrap ();
+      assert_eq! (destination, "lib.rs");
   }
     const BLOCK_BEGIN: &'static str = "#+begin_src ";
     const BLOCK_END: &'static str = "#+end_src";
