@@ -36,6 +36,10 @@ To highlight some feature of C4 :
   and applying minimal, accurate solutions to these problems.
 ```
 
+## CODE OF CONDUCT
+
+[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT)
+
 ## LICENSE
 
 [GPLv3](LICENSE)
