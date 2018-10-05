@@ -154,7 +154,6 @@
         if ! org_file_p (file) {
             return Ok (());
         }
-        println! ("- tangle : {:?}", file);
         let string = fs::read_to_string (file)?;
         if let Some (destination) = find_destination (&string) {
             let result = tangle (&string) .unwrap ();
@@ -162,6 +161,10 @@
             destination_path.push (file);
             destination_path.pop ();
             destination_path.push (destination);
+            println! (
+                "- tangle : {:?} => {:?}",
+                file.canonicalize ()?,
+                destination_path.canonicalize ()?);
             fs::write (&destination_path, result)
         } else {
             Ok (())
