@@ -38,7 +38,7 @@ To highlight some feature of C4 :
 
 ## CODE OF CONDUCT
 
-[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT)
+[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## LICENSE
 
