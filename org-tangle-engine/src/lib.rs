@@ -18,65 +18,88 @@
           }
       }
   }
-  fn property_line_p (line: &str) -> bool {
-      line .trim_start () .starts_with ("#+property:")
-  }
+    fn property_line_p (line: &str) -> bool {
+        line .trim_start () .starts_with ("#+property:")
+    }
+    fn find_destination_in_property_line (
+        line: &str,
+    ) -> Option <String> {
+        let mut words = line.split_whitespace ();
+        while let Some (word) = words.next () {
+            if word == "tangle" || word == ":tangle" {
+                if let Some (destination) = words.next () {
+                    return Some (destination.to_string ())
+                }
+            }
+        }
+        None
+    }
+    fn find_destination (string: &str) -> Option <String> {
+        for line in string.lines () {
+            if property_line_p (line) {
+                let destination =
+                    find_destination_in_property_line (line);
+                if destination. is_some () {
+                    return destination;
+                }
+            }
+        }
+        None
+    }
+    #[test]
+    fn test_find_destination () {
+        let example = "#+property: tangle lib.rs";
+        let destination = find_destination (example) .unwrap ();
+        assert_eq! (destination, "lib.rs");
 
-  fn find_destination_in_property_line (
-      line: &str,
-  ) -> Option <String> {
-      let mut words = line.split_whitespace ();
-      while let Some (word) = words.next () {
-          if word == "tangle" || word == ":tangle" {
-              if let Some (destination) = words.next () {
-                  return Some (destination.to_string ())
-              }
-          }
-      }
-      None
-  }
-
-  fn find_destination (string: &str) -> Option <String> {
-      for line in string.lines () {
-          if property_line_p (line) {
-              let destination =
-                  find_destination_in_property_line (line);
-              if destination. is_some () {
-                  return destination;
-              }
-          }
-      }
-      None
-  }
-
-  #[test]
-  fn test_find_destination () {
-      let example = "#+property: tangle lib.rs";
-      let destination = find_destination (example) .unwrap ();
-      assert_eq! (destination, "lib.rs");
-
-      let example = "#+property: header-args :tangle lib.rs";
-      let destination = find_destination (example) .unwrap ();
-      assert_eq! (destination, "lib.rs");
-  }
-    const BLOCK_BEGIN: &'static str = "#+begin_src ";
-    const BLOCK_END: &'static str = "#+end_src";
-
+        let example = "#+property: header-args :tangle lib.rs";
+        let destination = find_destination (example) .unwrap ();
+        assert_eq! (destination, "lib.rs");
+    }
     fn block_begin_line_p (line: &str) -> bool {
-        line .trim_start () .starts_with (BLOCK_BEGIN)
+        line .trim_start () .starts_with ("#+begin_src")
     }
-
     fn block_end_line_p (line: &str) -> bool {
-        line .trim_start () .starts_with (BLOCK_END)
+        line .trim_start () .starts_with ("#+end_src")
     }
+    fn block_indentation (line: &str) -> usize {
+        let mut indentation = 0;
+        for ch in line.chars () {
+            if ch == ' ' {
+                indentation += 1;
+            } else {
+                return indentation;
+            }
+        }
+        0
+    }
+        fn line_trim_indentation <'a> (
+            mut line: &'a str,
+            indentation: usize,
+        ) -> &'a str {
+            let mut counter = 0;
+            while counter < indentation {
+                if line.starts_with (' ') {
+                    counter += 1;
+                    line = &line[1..];
+                } else {
+                    return line;
+                }
+            }
+            line
+        }
     fn tangle_collect (
         result: &mut String,
         lines: &mut Lines,
+        indentation: usize,
     ) -> Result <(), TangleError> {
         for line in lines {
             if block_end_line_p (line) {
+                result.push ('\n');
                 return Ok (());
             } else {
+                let line = line_trim_indentation (
+                    line, indentation);
                 result.push_str (line);
                 result.push ('\n');
             }
@@ -89,7 +112,10 @@
         let mut lines = string.lines ();
         while let Some (line) = lines.next () {
             if block_begin_line_p (line) {
-                tangle_collect (&mut result, &mut lines)?;
+                tangle_collect (
+                    &mut result,
+                    &mut lines,
+                    block_indentation (line))?;
             }
         }
         Ok (result)
@@ -104,12 +130,13 @@
             "#+end_src",
         );
         let expect = format! (
-            "{}\n{}\n",
+            "{}\n{}\n\n",
             "hi",
             "hi",
         );
         let result = tangle (&example) .unwrap ();
         assert_eq! (expect, result);
+
         let example = format! (
             "{}\n{}\n{}\n{}\n",
             "    #+begin_src rust",
@@ -118,7 +145,22 @@
             "    #+end_src",
         );
         let expect = format! (
-            "{}\n{}\n",
+            "{}\n{}\n\n",
+            "hi",
+            "hi",
+        );
+        let result = tangle (&example) .unwrap ();
+        assert_eq! (expect, result);
+
+        let example = format! (
+            "{}\n{}\n{}\n{}\n",
+            "#+begin_src rust",
+            "    hi",
+            "    hi",
+            "#+end_src",
+        );
+        let expect = format! (
+            "{}\n{}\n\n",
             "    hi",
             "    hi",
         );
