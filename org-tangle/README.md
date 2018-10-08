@@ -13,8 +13,7 @@ A command line tool to tangle code blocks in org file to source code file.
   - code block level tangle property-line is NOT supported
   - headline level tangle property-line is NOT supported
 
-I recommend [ntangle](https://github.com/OrgTangle/ntangle),
-if you need more complete org-mode supports.
+Check out https://github.com/OrgTangle for alternative org-tangle support.
 
 ## Getting Start
 
