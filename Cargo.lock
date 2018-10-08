@@ -56,12 +56,12 @@ name = "org-tangle"
 version = "0.1.6"
 dependencies = [
  "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "org-tangle-engine 0.1.7",
+ "org-tangle-engine 0.1.8",
 ]
 
 [[package]]
 name = "org-tangle-engine"
-version = "0.1.7"
+version = "0.1.8"
 
 [[package]]
 name = "redox_syscall"
