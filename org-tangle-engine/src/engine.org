@@ -183,6 +183,7 @@
                     block_indentation (line))?;
             }
         }
+        result.pop ();
         Ok (result)
     }
     #+end_src
@@ -200,7 +201,7 @@
             "#+end_src",
         );
         let expect = format! (
-            "{}\n{}\n\n",
+            "{}\n{}\n",
             "hi",
             "hi",
         );
@@ -215,7 +216,7 @@
             "    #+end_src",
         );
         let expect = format! (
-            "{}\n{}\n\n",
+            "{}\n{}\n",
             "hi",
             "hi",
         );
@@ -230,7 +231,7 @@
             "#+end_src",
         );
         let expect = format! (
-            "{}\n{}\n\n",
+            "{}\n{}\n",
             "    hi",
             "    hi",
         );

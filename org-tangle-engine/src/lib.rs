@@ -129,6 +129,7 @@ fn tangle (string: &str) -> Result <String, TangleError> {
                 block_indentation (line))?;
         }
     }
+    result.pop ();
     Ok (result)
 }
 
@@ -142,7 +143,7 @@ fn test_tangle () {
         "#+end_src",
     );
     let expect = format! (
-        "{}\n{}\n\n",
+        "{}\n{}\n",
         "hi",
         "hi",
     );
@@ -157,7 +158,7 @@ fn test_tangle () {
         "    #+end_src",
     );
     let expect = format! (
-        "{}\n{}\n\n",
+        "{}\n{}\n",
         "hi",
         "hi",
     );
@@ -172,7 +173,7 @@ fn test_tangle () {
         "#+end_src",
     );
     let expect = format! (
-        "{}\n{}\n\n",
+        "{}\n{}\n",
         "    hi",
         "    hi",
     );
