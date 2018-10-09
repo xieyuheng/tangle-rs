@@ -1,6 +1,6 @@
 [package]
 name = "org-tangle-engine"
-version = "0.1.8"
+version = "0.1.9"
 authors = ["Xie Yuheng <xyheme@gmail.com>"]
 edition = "2018"
 repository = "https://github.com/parsing-tech/org-rs"

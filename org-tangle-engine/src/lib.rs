@@ -219,11 +219,12 @@ pub fn file_tangle (file: &Path) -> io::Result <()> {
         destination_path.push (file);
         destination_path.pop ();
         destination_path.push (destination);
+        fs::write (&destination_path, result)?;
         println! (
             "- tangle : {:?} => {:?}",
             file.canonicalize ()?,
             destination_path.canonicalize ()?);
-        fs::write (&destination_path, result)
+        Ok (())
     } else {
         Ok (())
     }
