@@ -25,7 +25,7 @@ We use Collective Code Construction Contract (a.k.a. C4) as our collaboration pr
 - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
 - [Our Style Guide](STYLE-GUIDE.md)
 
-To highlight some feature of C4 :
+To highlight some features of C4 :
 
 ```
 - Everyone, without distinction or discrimination,

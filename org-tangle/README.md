@@ -26,7 +26,7 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install org-tangle
+cargo +nightly install org-tangle --git https://github.com/parsing-tech/org-rs
 ```
 
 ## usage
