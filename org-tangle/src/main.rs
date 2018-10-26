@@ -13,7 +13,7 @@ use clap as cmd;
 
 fn main () -> io::Result <()> {
     let matches = cmd::App::new ("org-tangle")
-        .setting(cmd::AppSettings::ArgRequiredElseHelp)
+        .setting (cmd::AppSettings::ArgRequiredElseHelp)
         .author (cmd::crate_authors! ())
         .version (cmd::crate_version! ())
         .arg (cmd::Arg::with_name ("-r")
