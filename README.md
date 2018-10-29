@@ -6,14 +6,6 @@
 
 A collection of tools to do tangle in rust.
 
-## Restricted
-
-- odd numeber of stars for headline.
-- strict indentation with two spaces.
-- can not use star for list -- since star is used for headline.
-- only use `n.` as marker for numebered list.
-  - can not use `n)` -- for brackets should better be balanced.
-
 ## Contributing
 
 We use Collective Code Construction Contract (a.k.a. C4) as our collaboration protocol.

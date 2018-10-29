@@ -13,7 +13,7 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install md-tangle --git https://github.com/parsing-tech/parsing-rs
+cargo +nightly install md-tangle --git https://github.com/parsing-tech/tangle-rs
 ```
 
 ## usage
@@ -63,11 +63,3 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 }
 ```
 </code></pre>
-
-- For a complete example,
-  see [this directory](https://github.com/parsing-tech/parsing-rs/tree/master/md-tangle-engine/src)
-  where `engine.md` is tangled to `lib.rs`
-
-## Related Project
-
-- [org-tangle](https://github.com/parsing-tech/parsing-rs/tree/master/org-tangle) -- same tool for org file.

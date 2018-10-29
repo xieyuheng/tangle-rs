@@ -1,7 +1,7 @@
 [workspace]
 members = [
-    "org-parser",
     "org-tangle-engine",
     "org-tangle",
-    "org-book",
+    "md-tangle-engine",
+    "md-tangle",
 ]

@@ -30,7 +30,7 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install org-tangle --git https://github.com/parsing-tech/parsing-rs
+cargo +nightly install org-tangle --git https://github.com/parsing-tech/tangle-rs
 ```
 
 ## Usage
@@ -79,11 +79,3 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 }
 #+end_src
 ```
-
-- For a complete example,
-  see [this directory](https://github.com/parsing-tech/parsing-rs/tree/master/org-tangle-engine/src)
-  where `engine.org` is tangled to `lib.rs`
-
-## Related Project
-
-- [md-tangle](https://github.com/parsing-tech/parsing-rs/tree/master/md-tangle) -- same tool for markdown file.
