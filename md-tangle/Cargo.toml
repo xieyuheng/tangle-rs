@@ -1,0 +1,13 @@
+[package]
+name = "md-tangle"
+version = "0.1.4"
+authors = ["Xie Yuheng <xyheme@gmail.com>"]
+edition = "2018"
+license = "GPL-3.0"
+description = """
+A command line tool to tangle code blocks in markdown file to source code file.
+"""
+
+[dependencies]
+md-tangle-engine = { path = "../md-tangle-engine" }
+clap = "2"

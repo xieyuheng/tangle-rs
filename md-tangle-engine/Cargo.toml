@@ -1,12 +1,12 @@
 [package]
-name = "org-book"
-version = "0.1.0"
+name = "md-tangle-engine"
+version = "0.1.4"
 authors = ["Xie Yuheng <xyheme@gmail.com>"]
 edition = "2018"
 description = """
-Create book from org-mode files.
+To tangle markdown.
+- the engine of the commend line tool.
 """
 license = "GPL-3.0"
 
 [dependencies]
-org-parser = { version = "0.1", path = "../org-parser" }

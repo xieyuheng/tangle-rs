@@ -1,11 +1,15 @@
 # org-tangle
 
-[![Build Status](https://travis-ci.org/parsing-tech/org-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/org-rs)
-
-- [Main Repo](https://github.com/parsing-tech/org-rs)
-
 A command line tool to tangle code blocks in org file to source code file.
 - A faster way to tangle org-mode.
+
+## org-mode Restricted
+
+- odd numeber of stars for headline.
+- strict indentation with two spaces.
+- can not use star for list -- since star is used for headline.
+- only use `n.` as marker for numebered list.
+  - can not use `n)` -- for brackets should better be balanced.
 
 ## Note About Restriction
 
@@ -26,10 +30,10 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install org-tangle --git https://github.com/parsing-tech/org-rs
+cargo +nightly install org-tangle --git https://github.com/parsing-tech/parsing-rs
 ```
 
-## usage
+## Usage
 
 ```
 USAGE:
@@ -77,9 +81,9 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 ```
 
 - For a complete example,
-  see [this directory](https://github.com/parsing-tech/org-rs/tree/master/org-tangle-engine/src)
+  see [this directory](https://github.com/parsing-tech/parsing-rs/tree/master/org-tangle-engine/src)
   where `engine.org` is tangled to `lib.rs`
 
 ## Related Project
 
-- [md-tangle](https://github.com/parsing-tech/md-rs/tree/master/md-tangle) -- same tool for markdown file.
+- [md-tangle](https://github.com/parsing-tech/parsing-rs/tree/master/md-tangle) -- same tool for markdown file.

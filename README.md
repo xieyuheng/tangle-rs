@@ -1,14 +1,10 @@
-# org-mode -- restricted
+# tangle in rust
 
-[![Build Status](https://travis-ci.org/parsing-tech/org-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/org-rs)
+[![Build Status](https://travis-ci.org/parsing-tech/tangle-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/tangle-rs)
 
 ## Welcome
 
-A collection of tools for restricted org-mode.
-
-- org-parser -- parsing org file
-- org-tangle -- fast tangle
-- org-book -- generate book
+A collection of tools to do tangle in rust.
 
 ## Restricted
 

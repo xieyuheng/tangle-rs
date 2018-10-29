@@ -3,13 +3,11 @@ name = "org-tangle"
 version = "0.1.6"
 authors = ["Xie Yuheng <xyheme@gmail.com>"]
 edition = "2018"
-readme = "README.md"
-repository = "https://github.com/parsing-tech/org-rs"
 description = """
 A faster way to tangle org-mode.
 """
 license = "GPL-3.0"
 
 [dependencies]
-org-tangle-engine = { version = "0.1", path = "../org-tangle-engine" }
+org-tangle-engine = { path = "../org-tangle-engine" }
 clap = "2"
