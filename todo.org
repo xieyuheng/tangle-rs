@@ -1,7 +1,0 @@
-#+title: todo
-
-- merge `md-tangle-engine` and `org-tangle-engine` to `tangle`
-- merge `md-tangle` `org-tangle` to `tangle-cli`
-  - only one `tangle` command line tool
-    detect format by file name (`.md` or `org`)
-- use `eopl` to test `mexp-parser`

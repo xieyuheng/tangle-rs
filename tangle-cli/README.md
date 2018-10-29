@@ -1,15 +1,4 @@
-# org-tangle
-
-A command line tool to tangle code blocks in org file to source code file.
-- A faster way to tangle org-mode.
-
-## org-mode Restricted
-
-- odd numeber of stars for headline.
-- strict indentation with two spaces.
-- can not use star for list -- since star is used for headline.
-- only use `n.` as marker for numebered list.
-  - can not use `n)` -- for brackets should better be balanced.
+# tangle -- command line tools
 
 ## Note About Restriction
 
@@ -17,7 +6,7 @@ A command line tool to tangle code blocks in org file to source code file.
   - code block level tangle property-line is NOT supported
   - headline level tangle property-line is NOT supported
 
-Check out https://github.com/OrgTangle for alternative org-tangle support.
+Check out https://github.com/OrgTangle for alternative tangle support.
 
 ## Getting Start
 
@@ -30,14 +19,14 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install org-tangle --git https://github.com/parsing-tech/tangle-rs
+cargo +nightly install tangle --git https://github.com/parsing-tech/tangle-rs
 ```
 
 ## Usage
 
 ```
 USAGE:
-    org-tangle [FLAGS] [PATH]...
+    tangle [FLAGS] [PATH]...
 
 FLAGS:
     -r, --recursive    recursively traverse <DIR>
@@ -49,12 +38,11 @@ ARGS:
                  ignore non unicode <PATH>
                  ignore non `.org` files
                  ignore `.org` files without tangle property
-
 ```
 
 ## Example
 
-In file `engine.org`
+In file `tangle.org`
 
 - Add tangle property-line
 

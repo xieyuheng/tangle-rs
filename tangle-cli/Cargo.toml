@@ -1,0 +1,9 @@
+[package]
+name = "tangle-cli"
+version = "0.1.6"
+authors = ["Xie Yuheng <xyheme@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+tangle = { path = "../tangle" }
+clap = "2"

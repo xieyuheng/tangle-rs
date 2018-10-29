@@ -1,7 +1,5 @@
 [workspace]
 members = [
-    "org-tangle-engine",
-    "org-tangle",
-    "md-tangle-engine",
-    "md-tangle",
+    "tangle",
+    "tangle-cli",
 ]

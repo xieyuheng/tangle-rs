@@ -41,27 +41,12 @@ version = "0.2.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "org-book"
-version = "0.1.0"
-dependencies = [
- "org-parser 0.1.1",
-]
-
-[[package]]
-name = "org-parser"
-version = "0.1.1"
-
-[[package]]
 name = "org-tangle"
 version = "0.1.6"
 dependencies = [
  "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "org-tangle-engine 0.1.9",
+ "tangle 0.1.9",
 ]
-
-[[package]]
-name = "org-tangle-engine"
-version = "0.1.9"
 
 [[package]]
 name = "redox_syscall"
@@ -80,6 +65,10 @@ dependencies = [
 name = "strsim"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "tangle"
+version = "0.1.9"
 
 [[package]]
 name = "termion"

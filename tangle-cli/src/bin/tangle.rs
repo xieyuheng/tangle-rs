@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use std::io;
 
-use org_tangle_engine::{
+use tangle::{
     file_tangle,
     dir_tangle,
     dir_tangle_rec,
