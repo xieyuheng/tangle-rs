@@ -41,14 +41,6 @@ version = "0.2.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "org-tangle"
-version = "0.1.6"
-dependencies = [
- "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "tangle 0.1.9",
-]
-
-[[package]]
 name = "redox_syscall"
 version = "0.1.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -69,6 +61,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "tangle"
 version = "0.1.9"
+
+[[package]]
+name = "tangle-cli"
+version = "0.1.6"
+dependencies = [
+ "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tangle 0.1.9",
+]
 
 [[package]]
 name = "termion"

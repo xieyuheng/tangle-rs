@@ -1,6 +1,6 @@
 # tangle in rust
 
-[![Build Status](https://travis-ci.org/parsing-tech/tangle-rs.svg?branch=master)](https://travis-ci.org/parsing-tech/tangle-rs)
+[![Build Status](https://travis-ci.com/xieyuheng/tangle-rs.svg?branch=master)](https://travis-ci.com/xieyuheng/tangle-rs)
 
 ## Welcome
 
