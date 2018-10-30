@@ -19,7 +19,7 @@ Then do:
 
 ```
 rustup install nightly
-cargo +nightly install tangle-cli --git https://github.com/parsing-tech/tangle-rs
+cargo +nightly install tangle-cli --git https://github.com/xieyuheng/tangle-rs
 ```
 
 ## Usage
