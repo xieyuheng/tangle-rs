@@ -24,7 +24,7 @@ fn main () -> io::Result <()> {
         .arg (cmd::Arg::with_name ("PATH")
               .help ("\
                   <PATH> can be <FILE> or <DIR>\n\
-                  only handle .org .md files\n\
+                  only handle .org & .md files\n\
                   ignore non unicode <PATH>\n\
                   ignore files without tangle property\n\
                   ")
