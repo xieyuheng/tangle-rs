@@ -65,7 +65,7 @@ tangle: lib.rs
 
 - The following code block will be tangled into `lib.rs`
 
-<code lang="rust">
+<code lang="rust"><pre>
 ``` rust
 fn tangle (string: &str) -> Result <String, TangleError> {
     let mut result = String::new ();
@@ -78,7 +78,7 @@ fn tangle (string: &str) -> Result <String, TangleError> {
     Ok (result)
 }
 ```
-</code>
+</pre></code>
 
 ## Contributing
 
