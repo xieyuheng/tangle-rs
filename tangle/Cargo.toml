@@ -1,6 +1,6 @@
 [package]
 name = "tangle"
-version = "0.1.9"
+version = "0.1.10"
 authors = ["Xie Yuheng <xyheme@gmail.com>"]
 edition = "2018"
 

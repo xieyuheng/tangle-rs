@@ -12,7 +12,7 @@ use tangle::{
 use clap as cmd;
 
 fn main () -> io::Result <()> {
-    let matches = cmd::App::new ("org-tangle")
+    let matches = cmd::App::new ("tangle")
         .setting (cmd::AppSettings::ArgRequiredElseHelp)
         .author (cmd::crate_authors! ())
         .version (cmd::crate_version! ())
@@ -25,8 +25,8 @@ fn main () -> io::Result <()> {
               .help ("\
                   <PATH> can be <FILE> or <DIR>\n\
                   ignore non unicode <PATH>\n\
-                  ignore non `.org` files\n\
-                  ignore `.org` files without tangle property\n\
+                  ignore non `.org` or non `.md` files\n\
+                  ignore files without tangle property\n\
                   ")
               .multiple (true))
         .get_matches ();

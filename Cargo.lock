@@ -60,14 +60,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "tangle"
-version = "0.1.9"
+version = "0.1.10"
 
 [[package]]
 name = "tangle-cli"
-version = "0.1.6"
+version = "0.1.7"
 dependencies = [
  "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "tangle 0.1.9",
+ "tangle 0.1.10",
 ]
 
 [[package]]
