@@ -85,7 +85,7 @@ fn tangle (string: &str) -> Result <String, TangleError> {
 We enforce C4 as collaboration protocol :
 - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
 - [Style Guide](STYLE-GUIDE.md) -- observe the style of existing code and respect it
-- CI [![Build Status](https://travis-ci.com/xieyuheng/tangle-rs.svg?branch=master)](https://travis-ci.com/xieyuheng/tangle-rs)
+- CI [![Build Status](https://travis-ci.org/xieyuheng/tangle-rs.svg?branch=master)](https://travis-ci.org/xieyuheng/tangle-rs)
 
 ## Code Of Conduct
 
